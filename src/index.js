@@ -25,11 +25,14 @@ let gallery = new SimpleLightbox('.gallery a', {
 function onSubmit(ev) {
     ev.preventDefault();
 
+    clearHitsMarkup() 
     const searchQuery = ev.currentTarget.elements.searchQuery.value;
+    // searchImages.query = ev.currentTarget.elements.query.value;
     console.log(searchQuery);
     searchImages.resetPage(); 
+    
 
-    searchImages.getImages(searchQuery)
+    searchImages.getImages()
       .then(response => {
         console.log(response.data);
       return response.data;
@@ -39,12 +42,16 @@ function onSubmit(ev) {
           
     }
 
-function renderMarkup( hits )  {
-  const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = hit;
+    function onLoadMore(ev) {
+      searchImages.getImages().then(data => console.log(data));
+         
+  }
 
+function renderMarkup({hits})  {
+  
     markup = hits
-        .map((hit) => {
-            return `<div class="photo-card">
+        .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => 
+            `<div class="photo-card">
             <a class='photo-link' href="${largeImageURL}">
             <img src="${webformatURL}" alt="${tags}" loading="lazy" />
             </a>
@@ -62,8 +69,8 @@ function renderMarkup( hits )  {
                 <b>Downloads</b>${downloads}
               </p>
             </div>
-          </div>`;
-        }).join('');
+          </div>`
+        ).join('');
   
         return markup;
       }
@@ -71,13 +78,12 @@ function renderMarkup( hits )  {
       updateHitsMarkup(markup);
 
 function updateHitsMarkup(markup) {
-    // countryInfo.innerHTML = '';
-    galleryCards.insertAdjacentHTML("beforeend",markup); 
+    
+    galleryCards.insertAdjacentHTML("beforeend", markup); 
     gallery.refresh();
   }
 
-  function onLoadMore(ev) {
-    const data = searchImages.getImages(searchQuery).then(data => console.log(data));
-       
-}
+  function clearHitsMarkup() {
+    galleryCards.innerHTML = '';
+  }
 
