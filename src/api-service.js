@@ -4,8 +4,9 @@ import Notiflix from 'notiflix';
 export default class SearchImages {
   constructor() {
     this.searchQuery = '';
-    this.queryPage = 1;
+    this.page = 1;
   }
+
   async getImages() {
     const API_URL = 'https://pixabay.com/api/';
     const API_KEY = '33444425-aa967b3bfdbb34722499531dc';
@@ -15,17 +16,18 @@ export default class SearchImages {
     const safesearch = true;
     const per_page = 40;
 
-    const URL = `${API_URL}?key=${API_KEY}&q=${this.searchQuery}&image_type=${image_type}&orientation=${orientation}&safesearch=${safesearch}&page=${this.queryPage}&per_page=${per_page}`;
+    const URL = `${API_URL}?key=${API_KEY}&q=${this.searchQuery}&image_type=${image_type}&orientation=${orientation}&safesearch=${safesearch}&page=${this.page}&per_page=${per_page}`;
 
-    // console.log(this);
+    console.log(this);
 
     const response = await axios.get(URL);
     this.incrementPage();
     return response;
+    console.log(this);
   }
 
   incrementPage() {
-    this.queryPage += 1;
+    this.page += 1;
   }
 
   get query() {
@@ -36,7 +38,7 @@ export default class SearchImages {
   }
 
   resetPage() {
-    this.queryPage = 1;
+    this.page = 1;
   }
 }
 

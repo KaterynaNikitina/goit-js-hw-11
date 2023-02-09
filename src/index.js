@@ -1,7 +1,6 @@
-// const axios = require('axios').default;
+
 import Notiflix from 'notiflix';
 import SearchImages from './api-service';
-// import './css/styles.css';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
@@ -26,8 +25,11 @@ function onSubmit(ev) {
     ev.preventDefault();
 
     clearHitsMarkup() 
-    const searchQuery = ev.currentTarget.elements.searchQuery.value;
+    
+    const searchQuery = ev.currentTarget.elements.searchQuery.value.trim();
     // searchImages.query = ev.currentTarget.elements.query.value;
+
+
     console.log(searchQuery);
     searchImages.resetPage(); 
     
@@ -87,3 +89,6 @@ function updateHitsMarkup(markup) {
     galleryCards.innerHTML = '';
   }
 
+// if (searchQuery = '') {
+    //   return Notiflix.Notify.info('Please enter a valid request')
+    // }
