@@ -2,72 +2,97 @@
 // body {
 //     width: 1440px;
 // }
-.search-form{
-    margin-top: 20px;
-    text-align: center;
-    
+.search-form {
+  margin-top: 20px;
+  text-align: center;
 }
-
 
 // .gallery{
 //     display: flex;
 //     justify-content: center;
 //     align-items: center;
 //     flex-wrap: wrap;
-  
+
 //    margin: 10px;
 //     gap: 50px;
 // }
 
 .gallery {
-  
-    display: flex;
-    // flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;  
-    justify-content: center;
-    padding: 0;
-    margin: 10px;
-       
-  }
+  display: flex;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 0;
+  margin: 10px;
+}
 
-.photo-card{
-    flex-basis: calc((100% - 90px) / 4);
-    position: relative;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  }
+.photo-card {
+  flex-basis: calc((100% - 90px) / 4);
+  position: relative;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
 
-img{
-    display: block;
-    width: 100%;
+img {
+  display: block;
+  width: 100%;
 }
 
 img:hover {
-    transform: scale(1.03);
-  }
+  transform: scale(1.03);
+}
 
-.info{
-    display: flex ;
- 
+
+
+// .foto-card > img:hover {
+//   transform: scale(1.03);
+// }
+
+// .info {
+//   display: flex;
+// }
+
+// .info-item {
+//   margin: 0;
+//   margin-top: 10px;
+// }
+
+
+// .image-scale {
+//   transform: scale(1.03);
+// }
+
+.info
+{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
 }
 
 .info-item{
-    margin: 0;
-  margin-top: 10px;
-  
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 10px;
+  align-items: center;
 }
 
-.load-more{
-    display: block;
-    margin: 0 auto;
-    min-width: 120px;
-    border-radius: 25px;
-    border: 2px solid #2a2a2a;
-    color: white;
-    background-color: rgb(100, 100, 245);
+
+.load-more {
+  display: block;
+  margin: 0 auto;
+  min-width: 120px;
+  border-radius: 25px;
+  border: 2px solid #2a2a2a;
+  color: white;
+  background-color: rgb(100, 100, 245);
 }
 
-button.is-hidden {
-    display: none;
+button.hidden {
+  display: none;
 }
+

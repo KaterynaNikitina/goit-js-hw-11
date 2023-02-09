@@ -1,10 +1,10 @@
 import axios from 'axios';
-import Notiflix from 'notiflix';
 
 export default class SearchImages {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
+    this.countImg = 0;
   }
 
   async getImages() {
@@ -22,8 +22,8 @@ export default class SearchImages {
 
     const response = await axios.get(URL);
     this.incrementPage();
-    return response;
-    console.log(this);
+    return response.data;
+    
   }
 
   incrementPage() {
