@@ -1,21 +1,12 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-// body {
-//     width: 1440px;
-// }
+* {
+  box-sizing: border-box;
+}
+
 .search-form {
   margin-top: 20px;
   text-align: center;
 }
-
-// .gallery{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-wrap: wrap;
-
-//    margin: 10px;
-//     gap: 50px;
-// }
 
 .gallery {
   display: flex;
@@ -42,26 +33,6 @@ img {
 img:hover {
   transform: scale(1.03);
 }
-
-
-
-// .foto-card > img:hover {
-//   transform: scale(1.03);
-// }
-
-// .info {
-//   display: flex;
-// }
-
-// .info-item {
-//   margin: 0;
-//   margin-top: 10px;
-// }
-
-
-// .image-scale {
-//   transform: scale(1.03);
-// }
 
 .info
 {

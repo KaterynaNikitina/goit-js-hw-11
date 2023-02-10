@@ -43,7 +43,6 @@ function onSubmit(ev) {
     return;
   }
   
-
   console.log(searchImages.searchQuery);
   searchImages.resetPage();
   loadMoreBtn.show();
@@ -86,7 +85,7 @@ function clearHitsMarkup() {
 }
 
 function checkingTotalHits(countImg, totalHits) {
-  if (countImg === totalHits) {
+  if (countImg >= totalHits) {
     loadMoreBtn.hide();
     loadMoreBtn.resetCountImg();
     Notiflix.Notify.failure(
